@@ -27,7 +27,7 @@ export default function SignUp () {
     e.preventDefault();
     const {name, number, email, password, passwordAgain} = signUpData;
 
-    const res = await fetch("https://backend-todoapp-a1aa.onrender.com/post-users", {
+    const res = await fetch("https://backend-to-do-app-j0km.onrender.com/post-users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

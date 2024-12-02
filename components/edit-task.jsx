@@ -7,7 +7,7 @@ import { redirect, useParams } from 'next/navigation';
 
 export default function EditTask(){
   const { id } = useParams();
-  const { data: tasks } = useAxiosFetch('https://backend-todoapp-a1aa.onrender.com/get-tasks');
+  const { data: tasks } = useAxiosFetch('https://backend-to-do-app-j0km.onrender.com/get-tasks');
 
   const [editTask, setEditTask] = useState({
     title: "",
@@ -30,7 +30,7 @@ export default function EditTask(){
   const handleEdit = async(id) => {
     const { title, priority, status, startDate, endDate } = editTask;
 
-    const res = await fetch(`https://backend-todoapp-a1aa.onrender.com/edit-task/${id}`, {
+    const res = await fetch(`https://backend-to-do-app-j0km.onrender.com/edit-task/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -53,7 +53,7 @@ export default function EditTask(){
 
   const handleDelete = async(id) =>{
     if (window.confirm("Are You sure you want to delete the task ?")){
-      const res = await fetch(`https://backend-todoapp-a1aa.onrender.com/deletetask/${id}`, {
+      const res = await fetch(`https://backend-to-do-app-j0km.onrender.com/deletetask/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"

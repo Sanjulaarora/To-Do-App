@@ -5,7 +5,7 @@ import Link from 'next/link';
 import useAxiosFetch from '@/hooks/useAxiosFetch';
 
 export default function TaskList() {
-  const { data: tasks, isLoading, fetchError } = useAxiosFetch('https://backend-todoapp-a1aa.onrender.com/get-tasks');
+  const { data: tasks, isLoading, fetchError } = useAxiosFetch('https://backend-to-do-app-j0km.onrender.com/get-tasks');
 
   // State for filters
   const [selectedPriority, setSelectedPriority] = useState('');

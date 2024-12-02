@@ -6,7 +6,7 @@ import useAxiosFetch from '@/hooks/useAxiosFetch';
 import { redirect } from 'next/navigation';
 
 export default function AddTask() {
-  const { data: tasks } = useAxiosFetch('https://backend-todoapp-a1aa.onrender.com/get-tasks');
+  const { data: tasks } = useAxiosFetch('https://backend-to-do-app-j0km.onrender.com/get-tasks');
 
   const [taskData, setTaskData] = useState({
     title: "",
@@ -31,7 +31,7 @@ export default function AddTask() {
     const id = tasks.length ? tasks[tasks.length -1].id + 1 : 1;
     const {title, priority, status, startDate, endDate} = taskData;
 
-    const res = await fetch("https://backend-todoapp-a1aa.onrender.com/post-task", {
+    const res = await fetch("https://backend-to-do-app-j0km.onrender.com/post-task", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

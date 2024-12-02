@@ -4,7 +4,7 @@ import React from 'react'
 import useAxiosFetch from '@/hooks/useAxiosFetch';
 
 export default function Dashboard() {
-  const { data: tasks, isLoading, fetchError } = useAxiosFetch('https://backend-todoapp-a1aa.onrender.com/get-tasks');
+  const { data: tasks, isLoading, fetchError } = useAxiosFetch('https://backend-to-do-app-j0km.onrender.com/get-tasks');
   const totalCount = tasks.length;
   const pendingCount = tasks.filter(task => task.status === 'pending').length;
   const completedCount = tasks.filter(task => task.status === 'finished').length;  

@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation';
 const MainLayout = ({children}) => {
   const userSignOut = async() => {
     try{
-      const res = await fetch("https://backend-todoapp-a1aa.onrender.com/sign-out", {
+      const res = await fetch("https://backend-to-do-app-j0km.onrender.com/sign-out", {
         method: "GET",
         headers: {
           Accept: "application/json",
