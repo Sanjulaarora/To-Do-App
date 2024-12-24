@@ -6,29 +6,25 @@ import { redirect } from 'next/navigation';
 
 const MainLayout = ({children}) => {
   const userSignOut = async() => {
-    try{
-      const res = await fetch("https://backend-to-do-app-j0km.onrender.com/sign-out", {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        credentials: "include"
-      });  
-      
-      const data = await res.json();
-      console.log(data);
+    const res = await fetch("https://backend-to-do-app-j0km.onrender.com/sign-out", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      credentials: "include"
+    });  
+    
+    const data = await res.json();
+    console.log(data);
 
-      if(res.status !== 201) {
-        console.log("error");
-        alert("Something went Wrong!");
-      } else {
-        console.log("data valid");
-        alert("Your are Logged Out 🔐");
-        redirect("/");
-      }
-    } catch(error) {
-      console.log("Error occured:", error);
+    if(res.status !== 201 || !data) {
+      console.log("error");
+      alert("Something went Wrong!");
+    } else {
+      console.log("data valid");
+      alert("Your are Logged Out 🔐");
+      redirect("/");
     }
   };
 
