@@ -18,7 +18,7 @@ const MainLayout = ({children}) => {
     const data = await res.json();
     console.log(data);
 
-    if(res.status !== 201 || !data) {
+    if(res.status !== 200 || !data) {
       console.log("error");
       alert("Something went Wrong!");
     } else {
